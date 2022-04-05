@@ -1,0 +1,15 @@
+# passMan!!!
+want to have:
+    UI
+        login page
+        account creation page
+        add update remove modify external account information
+        
+    username and master password
+        master password hashed and salted
+
+        
+    accounts tied to username 
+        external account password information encrypted with key generated from master password
+        passwords decrypted decryption key generated from master password
+        copy password to clipboard(pyperclip)

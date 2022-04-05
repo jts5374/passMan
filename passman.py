@@ -14,7 +14,7 @@ cur.execute("""
 create table if not exists accounts(
     userid integer Primary Key,   
     username varchar(255) ,
-    password varchar(255))
+    masterpassword varchar(255))
 """)
 
 cur.execute("""
