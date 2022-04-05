@@ -7,11 +7,6 @@ class password_and_salt():
         self.hashpassword = passwordandsalt[29:]
         self.salt = passwordandsalt[:29]
     
-        def password(self):
-            return self.hashpassword
-            
-        def salt(self):
-            return self.salt
 
 def get_hashed_password_and_salt(plain_text_password):
     # Hash a password for the first time
