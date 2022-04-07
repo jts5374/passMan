@@ -1,6 +1,7 @@
-from tabnanny import check
 from cryptography.fernet import Fernet
 import bcrypt
+import base64
+import os
 
 class password_and_salt():
     def __init__(self, plain_text_password):
@@ -24,3 +25,6 @@ def check_password(plain_text_password, hashed_password):
 # print(p.salt)
 
 # print(check_password('password', p.salt+p.hashpassword))
+
+
+

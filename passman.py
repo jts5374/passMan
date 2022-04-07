@@ -1,7 +1,7 @@
 import os
 import encryptdecrypt as ed
 import SQL
-
+import basicfunctions as bf
 # dir_path = os.path.dirname(os.path.realpath(__file__))
 SQL.initialize_main_database()    
 
@@ -21,7 +21,4 @@ SQL.initialize_main_database()
 
 
 # SQL.create_new_account('jshea','password')
-print(SQL.get_password('jshea'))
-
-
 
