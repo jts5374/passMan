@@ -3,22 +3,19 @@ import encryptdecrypt as ed
 import SQL
 import basicfunctions as bf
 # dir_path = os.path.dirname(os.path.realpath(__file__))
-SQL.initialize_main_database()    
+SQL.initialize_main_databases()    
 
-# con = sqlite3.connect(os.path.join(dir_path, 'passMan.db'))
-# cur = con.cursor()
-# cur.execute("""
-# create table if not exists accounts(   
-#     username varchar(255) Primary Key ,
-#     masterpassword varchar(255))
-# """)
+# activeuser = bf.login('jshea', 'password')
 
+# print(activeuser.username)
+# print(activeuser.decryptkey)
 
-# pwordquery = cur.execute(getpassword, ('jshea',))
-# pword = pwordquery.fetchone()[0]
-# print(ed.check_password('password', pword))
+# bf.add_passwords('google', 'jshaa@msn.com', 'SOMGMOOPISS', activeuser.username, activeuser.decryptkey)
+# activeuser.logout()
+# print(bf.get_encrypted_password(2, activeuser.decryptkey))
 
 
 
-# SQL.create_new_account('jshea','password')
+# print(activeuser.username)
+# print(activeuser.decryptkey)
 
