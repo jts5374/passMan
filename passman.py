@@ -2,14 +2,8 @@ import os
 import encryptdecrypt as ed
 import SQL
 
-class User():
-    def __init__(self, username, mainpassword):
-        self.username = username
-        self.mainpassword = mainpassword
-        self.accounts = []
-
-dir_path = os.path.dirname(os.path.realpath(__file__))
-SQL.initialize_main_database(os.path.join(dir_path, 'passMan.db'))    
+# dir_path = os.path.dirname(os.path.realpath(__file__))
+SQL.initialize_main_database()    
 
 # con = sqlite3.connect(os.path.join(dir_path, 'passMan.db'))
 # cur = con.cursor()
@@ -25,6 +19,9 @@ SQL.initialize_main_database(os.path.join(dir_path, 'passMan.db'))
 # print(ed.check_password('password', pword))
 
 
+
+# SQL.create_new_account('jshea','password')
+print(SQL.get_password('jshea'))
 
 
 
