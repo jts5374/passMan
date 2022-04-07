@@ -13,3 +13,7 @@ want to have:
         external account password information encrypted with key generated from master password
         passwords decrypted decryption key generated from master password
         copy password to clipboard(pyperclip)
+
+    import and export account database for portablity and safety
+
+    Secure password generator
