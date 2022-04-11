@@ -31,7 +31,7 @@ def login(username, password):
     if check_password(password, username):
         
         salt = SQL.get_password(username)[:29]
-        dk = ed.generate_decrypt_key(password, salt)        
+        dk = ed.generate_decrypt_key(password, salt)     
         currentuser = currentUser(username, dk)
         return currentuser
 

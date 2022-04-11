@@ -5,15 +5,17 @@ import basicfunctions as bf
 # dir_path = os.path.dirname(os.path.realpath(__file__))
 SQL.initialize_main_databases()    
 
-# activeuser = bf.login('jshea', 'password')
+activeuser = bf.login('test', 'password')
 
-# print(activeuser.username)
-# print(activeuser.decryptkey)
+print(activeuser.username)
+print(activeuser.decryptkey)
 
-# bf.add_passwords('google', 'jshaa@msn.com', 'SOMGMOOPISS', activeuser.username, activeuser.decryptkey)
+
+
+
+#bf.add_passwords('amazon', 'test@msn.com', 'fjdksla;fjkdjfaksdjfdklsajfdksjafkdsjfkalsjdfkldsjalfkjdslafjdsklfjal', activeuser.username, activeuser.decryptkey)
 # activeuser.logout()
-# print(bf.get_encrypted_password(2, activeuser.decryptkey))
-
+print(bf.get_encrypted_password(4, activeuser.decryptkey))
 
 
 # print(activeuser.username)

@@ -75,6 +75,7 @@ def get_userPasswords_password(idx):
     query = cur.execute(getpassword, (idx,))
     return query.fetchone()[0]
 
+    
 def delete_password(idx):
     deletePassword = """
     Delete from userpasswords
