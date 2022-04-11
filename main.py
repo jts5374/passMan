@@ -15,6 +15,7 @@ class MainWindow(QDialog):
     def __init__(self) :
         super(MainWindow, self).__init__()
         loadUi((os.path.join(os.getcwd(), 'GUI', 'mainwindow.ui')), self)
+        bf.startup()
         self.label_2.setVisible(False)
         self.loginbtn.clicked.connect(self.loginbutton)
         self.createAccountbtn.clicked.connect(self.goToCreateAccount)
