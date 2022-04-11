@@ -90,4 +90,13 @@ def get_all_userpasswords(username):
     query = cur.execute(getall, (username,))
     return query.fetchall()
 
+def user_exists(username):
+    userexists = """
+    Select Exists(
+        Select * from accounts
+        Where username = ?)
+    """
+    query = cur.execute(userexists, (username,))
+    return query.fetchone()[0]
+
 

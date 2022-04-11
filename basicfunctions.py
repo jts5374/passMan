@@ -33,19 +33,18 @@ def check_password(password, username):
     return ed.check_password(password, SQL.get_password(username))
 
 def login(username, password):
-    try:
-        if check_password(password, username):
-            
-            currentuser = currentUser()    
-            currentuser.login(username, password)
-            return currentuser
+   
+    if check_password(password, username):
+        
+        currentuser = currentUser()    
+        currentuser.login(username, password)
+        return currentuser
 
-        else:
-            currentuser = currentUser('', '')
-            currentuser.logout()
-            return currentuser
-    except:
-        pass
+    else:
+        currentuser = currentUser()
+        currentuser.logout()
+        return currentuser
+
 
 
 #------SQL Functions-----------
@@ -63,4 +62,7 @@ def delete_password(pwdidx):
 
 def get_all_userpasswords(username):
     return SQL.get_all_userpasswords(username)
+
+def userexists(username):
+    return SQL.user_exists(username)
 
