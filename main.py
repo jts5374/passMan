@@ -94,14 +94,19 @@ class AddUpsAccount(QDialog):
         super(AddUpsAccount, self).__init__()
         loadUi((os.path.join(os.getcwd(), 'GUI', 'addupsaccount.ui')), self)
         self.addupsaccountbutton.clicked.connect(self.addaccount)
-
+        self.backbutton.clicked.connect(self.goback)
     def addaccount(self):
         bf.add_passwords(self.siteedit.text(), self.unameedit.text(), self.pwordedit.text(), activeuser.username, activeuser.decryptkey)
         loginsuccess = LoginSuccess()
         widget.addWidget(loginsuccess)
         widget.setCurrentIndex(widget.currentIndex()+1)
         widget.removeWidget(self)
-
+        
+    def goback(self):
+        loginsuccess = LoginSuccess()
+        widget.addWidget(loginsuccess)
+        widget.setCurrentIndex(widget.currentIndex()+1)
+        widget.removeWidget(self)
 
 
 app = QApplication(sys.argv)

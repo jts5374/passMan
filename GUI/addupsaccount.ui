@@ -55,10 +55,17 @@
      </property>
     </widget>
    </item>
-   <item row="7" column="0" colspan="2">
+   <item row="8" column="0" colspan="2">
     <widget class="QPushButton" name="addupsaccountbutton">
      <property name="text">
       <string>Add Account</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0" colspan="2">
+    <widget class="QPushButton" name="backbutton">
+     <property name="text">
+      <string>Back to Accounts page</string>
      </property>
     </widget>
    </item>

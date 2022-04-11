@@ -21,6 +21,8 @@ class currentUser():
 
 #----Account Functions---------
 
+def startup():
+    SQL.initialize_main_databases()
 
 def add_user(username, password):
     password = set_hashed_password(password)
