@@ -75,14 +75,16 @@ class createAccount(QDialog):
         self.returntoLoginbtn.clicked.connect(self.returntoLogin)
         self.warninglabel.setVisible(False)
     def createaccount(self):
-        if self.capasswordedit.text() != self.confirmpasswordedit.text():
-            self.warninglabel.setVisible(True)
-        else:
-            bf.add_user(self.causernameEdit.text(), self.capasswordedit.text())
-            mainwindow = MainWindow()
-            widget.addWidget(mainwindow)
-            widget.setCurrentIndex(widget.currentIndex()+1)
-            widget.removeWidget(self)
+        if not bf.userexists(self.causernameEdit.text()):
+            if self.capasswordedit.text() != self.confirmpasswordedit.text():
+                self.warninglabel.setVisible(True)
+            else:
+                bf.add_user(self.causernameEdit.text(), self.capasswordedit.text())
+                mainwindow = MainWindow()
+                widget.addWidget(mainwindow)
+                widget.setCurrentIndex(widget.currentIndex()+1)
+                widget.removeWidget(self)
+        
     def returntoLogin(self):
         mainwindow = MainWindow()
         widget.addWidget(mainwindow)
