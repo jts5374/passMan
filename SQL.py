@@ -83,3 +83,11 @@ def delete_password(idx):
     cur.execute(deletePassword, (idx,))
     con.commit()
 
+def get_all_userpasswords(username):
+    getall = """
+    Select * from userpasswords
+    where MasterUserName = ?"""
+    query = cur.execute(getall, (username,))
+    return query.fetchall()
+
+

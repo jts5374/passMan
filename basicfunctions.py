@@ -33,18 +33,19 @@ def check_password(password, username):
     return ed.check_password(password, SQL.get_password(username))
 
 def login(username, password):
-    if check_password(password, username):
-        
-        salt = SQL.get_password(username)[:29]
-        dk = ed.generate_decrypt_key(password, salt)        
-        currentuser = currentUser.login(username, dk)
-        return currentuser
+    try:
+        if check_password(password, username):
+            
+            currentuser = currentUser()    
+            currentuser.login(username, password)
+            return currentuser
 
-    else:
-        currentuser = currentUser('', '')
-        currentuser.logout()
-        return currentuser
-
+        else:
+            currentuser = currentUser('', '')
+            currentuser.logout()
+            return currentuser
+    except:
+        pass
 
 
 #------SQL Functions-----------
@@ -59,4 +60,7 @@ def get_encrypted_password(idx, key):
     
 def delete_password(pwdidx):
     SQL.delete_password(pwdidx)
+
+def get_all_userpasswords(username):
+    return SQL.get_all_userpasswords(username)
 

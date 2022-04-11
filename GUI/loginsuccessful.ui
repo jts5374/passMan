@@ -13,24 +13,11 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>80</y>
-     <width>311</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Login Successful</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>230</y>
+     <x>310</x>
+     <y>260</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -43,7 +30,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>140</y>
+     <y>10</y>
      <width>351</width>
      <height>20</height>
     </rect>
@@ -52,17 +39,40 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="refreshbutton">
+  <widget class="QPushButton" name="copypasswordbtn">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>230</y>
-     <width>75</width>
+     <x>120</x>
+     <y>110</y>
+     <width>261</width>
      <height>23</height>
     </rect>
    </property>
    <property name="text">
-    <string>refresh</string>
+    <string>Copy Password</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="passwordscomboBox">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>50</y>
+     <width>261</width>
+     <height>51</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addupsaccountbutton">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>260</y>
+     <width>231</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add Account</string>
    </property>
   </widget>
  </widget>
