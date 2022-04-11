@@ -48,7 +48,6 @@ class LoginSuccess(QDialog):
         self.copypasswordbtn.clicked.connect(self.copypassword)
         self.hellouserlabel.setText('Hello {}'.format(activeuser.username))
         self.tabledata = bf.get_all_userpasswords(activeuser.username)
-        print(self.tabledata)
         for item in self.tabledata:
             self.passwordscomboBox.addItem("Site:{} Username:{}".format(item[1], item[2]))
     def gotoScreen1(self):
