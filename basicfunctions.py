@@ -2,11 +2,16 @@ import encryptdecrypt as ed
 import SQL
 
 class currentUser():
-    def __init__(self, username, decryptkey) -> None:
+    def __init__(self) -> None:
+        self.username= ''
+        self.decryptkey=''
         
+    def login(self, username, password):   
         self.loggedin = True
         self.username = username
-        self.decryptkey = decryptkey
+        salt = SQL.get_password(username)[:29]
+        dk = ed.generate_decrypt_key(password, salt) 
+        self.decryptkey = dk
     def logout(self):
         self.loggedin = False
         self.username = 'No User Logged in'
@@ -32,7 +37,7 @@ def login(username, password):
         
         salt = SQL.get_password(username)[:29]
         dk = ed.generate_decrypt_key(password, salt)        
-        currentuser = currentUser(username, dk)
+        currentuser = currentUser.login(username, dk)
         return currentuser
 
     else:
