@@ -10,12 +10,22 @@ activeuser = bf.login('test', 'password')
 print(activeuser.username)
 print(activeuser.decryptkey)
 
+<<<<<<< HEAD
 
 
 
 #bf.add_passwords('amazon', 'test@msn.com', 'fjdksla;fjkdjfaksdjfdklsajfdksjafkdsjfkalsjdfkldsjalfkjdslafjdsklfjal', activeuser.username, activeuser.decryptkey)
 # activeuser.logout()
 print(bf.get_encrypted_password(4, activeuser.decryptkey))
+=======
+# print(bf.get_all_userpasswords(activeuser.username))
+
+>>>>>>> GUI
+
+print(SQL.user_exists('jj'))
+#bf.add_passwords('amazon', 'test@msn.com', 'fjdksla;fjkdjfaksdjfdklsajfdksjafkdsjfkalsjdfkldsjalfkjdslafjdsklfjal', activeuser.username, activeuser.decryptkey)
+# activeuser.logout()
+# print(bf.get_encrypted_password(4, activeuser.decryptkey))
 
 
 # print(activeuser.username)

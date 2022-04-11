@@ -2,11 +2,16 @@ import encryptdecrypt as ed
 import SQL
 
 class currentUser():
-    def __init__(self, username, decryptkey) -> None:
+    def __init__(self) -> None:
+        self.username= ''
+        self.decryptkey=''
         
+    def login(self, username, password):   
         self.loggedin = True
         self.username = username
-        self.decryptkey = decryptkey
+        salt = SQL.get_password(username)[:29]
+        dk = ed.generate_decrypt_key(password, salt) 
+        self.decryptkey = dk
     def logout(self):
         self.loggedin = False
         self.username = 'No User Logged in'
@@ -28,15 +33,21 @@ def check_password(password, username):
     return ed.check_password(password, SQL.get_password(username))
 
 def login(username, password):
+   
     if check_password(password, username):
         
+<<<<<<< HEAD
         salt = SQL.get_password(username)[:29]
         dk = ed.generate_decrypt_key(password, salt)     
         currentuser = currentUser(username, dk)
+=======
+        currentuser = currentUser()    
+        currentuser.login(username, password)
+>>>>>>> GUI
         return currentuser
 
     else:
-        currentuser = currentUser('', '')
+        currentuser = currentUser()
         currentuser.logout()
         return currentuser
 
@@ -51,6 +62,13 @@ def add_passwords(site, siteusername, password, username, key):
 def get_encrypted_password(idx, key):
     encryptedpw = SQL.get_userPasswords_password(idx)
     return ed.decrypt_userpassword_password(encryptedpw, key)
+    
 def delete_password(pwdidx):
     SQL.delete_password(pwdidx)
+
+def get_all_userpasswords(username):
+    return SQL.get_all_userpasswords(username)
+
+def userexists(username):
+    return SQL.user_exists(username)
 
