@@ -32,12 +32,7 @@ def decrypt_userpassword_password(encryptedpassword, key):
     return pyDes.triple_des(key).decrypt(encryptedpassword, padmode = 2).decode()
 
 
-p = password_and_salt('password')
 
-# print(p.hashpassword)
-# print(p.salt)
-
-# print(check_password('password', p.salt+p.hashpassword))
 
 
 

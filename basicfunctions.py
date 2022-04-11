@@ -51,6 +51,7 @@ def add_passwords(site, siteusername, password, username, key):
 def get_encrypted_password(idx, key):
     encryptedpw = SQL.get_userPasswords_password(idx)
     return ed.decrypt_userpassword_password(encryptedpw, key)
+    
 def delete_password(pwdidx):
     SQL.delete_password(pwdidx)
 
