@@ -49,8 +49,11 @@ class LoginSuccess(QDialog):
         self.copypasswordbtn.clicked.connect(self.copypassword)
         self.hellouserlabel.setText('Hello {}'.format(activeuser.username))
         self.tabledata = bf.get_all_userpasswords(activeuser.username)
+        
         for item in self.tabledata:
             self.passwordscomboBox.addItem("Site:{} Username:{}".format(item[1], item[2]))
+
+        self.removepasswordbutton.clicked.connect(self.removepassword)
     def gotoScreen1(self):
         activeuser.logout()
         mainwindow = MainWindow()
@@ -58,8 +61,17 @@ class LoginSuccess(QDialog):
         widget.setCurrentIndex(widget.currentIndex()+1)
         widget.removeWidget(self)
     def copypassword(self):
-            password = bf.get_encrypted_password(self.tabledata[self.passwordscomboBox.currentIndex()][0], activeuser.decryptkey)
-            pyperclip.copy(password)
+        password = bf.get_encrypted_password(self.tabledata[self.passwordscomboBox.currentIndex()][0], activeuser.decryptkey)
+        pyperclip.copy(password)
+
+    def removepassword(self):
+        
+        bf.remove_ups_account(self.tabledata[self.passwordscomboBox.currentIndex()][0])
+        
+        loginsuccess = LoginSuccess()
+        widget.addWidget(loginsuccess)
+        widget.setCurrentIndex(widget.currentIndex()+1)
+        widget.removeWidget(self)
 
     def gotoAddUpsAccount(self):
         addupsaccount = AddUpsAccount()

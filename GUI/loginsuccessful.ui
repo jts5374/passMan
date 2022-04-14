@@ -75,6 +75,19 @@
     <string>Add Account</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="removepasswordbutton">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>50</y>
+     <width>111</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Remove Password</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

@@ -28,6 +28,9 @@ def add_user(username, password):
     password = set_hashed_password(password)
     SQL.create_new_account(username, password)
 
+def remove_ups_account(idx):
+    SQL.delete_password(idx)
+    
 def set_hashed_password(pwd):
     return (ed.get_hashed_password_and_salt(pwd))
 
