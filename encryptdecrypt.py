@@ -20,7 +20,7 @@ def get_hashed_password_and_salt(plain_text_password):
 
 
 def check_password(plain_text_password, hashed_password):
-    return bcrypt.checkpw(plain_text_password, hashed_password)
+    return hashed_password == bcrypt.hashpw(plain_text_password, hashed_password[:29])
 
 def generate_decrypt_key(plain_text_password, salt):
     return PBKDF2(plain_text_password, salt).read(16)
